@@ -3,8 +3,15 @@ ETP/FTP Server Plugin for [Everything 1.5](https://www.voidtools.com/forum/viewt
 Allow users to search and access your files from Everything or an FTP client.
 
 ![image](https://github.com/user-attachments/assets/cb7472d5-b0c2-4653-b70b-af016d8b2549)
-![image](https://github.com/user-attachments/assets/a2555b5b-838f-4598-8ab1-c961aba3c522)
 
-https://www.voidtools.com/forum/viewtopic.php?p=35401#etp
-<br>
-https://www.voidtools.com/support/everything/etp/
+![image](https://github.com/user-attachments/assets/a2555b5b-838f-4598-8ab1-c961aba3c522)
+<br/><br/><br/> 
+  
+
+See also
+--------
+
+*   [Multiple Instances](https://www.voidtools.com/support/everything/multiple_instances)
+*   https://www.voidtools.com/support/everything/etp/
+*   [Everything 1.5 Plugins - HTTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
+*   [Everything 1.5 Plugin SDK](https://www.voidtools.com/forum/viewtopic.php?t=16535)
