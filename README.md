@@ -13,5 +13,5 @@ See also
 
 *   [Multiple Instances](https://www.voidtools.com/support/everything/multiple_instances)
 *   https://www.voidtools.com/support/everything/etp/
-*   [Everything 1.5 Plugins - HTTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
+*   [Everything 1.5 Plugins - ETP/FTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
 *   [Everything 1.5 Plugin SDK](https://www.voidtools.com/forum/viewtopic.php?t=16535)
