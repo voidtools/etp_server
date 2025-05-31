@@ -350,7 +350,7 @@ To automatically connect to an ETP server when starting Everything:
 SITE EVERYTHING
 ---------------
 
-The Everything ETP/FTP server extends FTP with the command <code>SITE EVERYTHING</code>.
+The Everything ETP/FTP server extends FTP with the <code>SITE EVERYTHING</code> command.
 
 The Everything client uses this extension to request search results.
 
