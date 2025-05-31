@@ -353,29 +353,31 @@ You can use the SITE command to check if the ETP/FTP server supports the EVERYTH
 
 <dl>
 <dt>EVERYTHING CASE &lt;x&gt;</dt><dd>(Match case if x is nonzero)</dd>
+<dt>EVERYTHING WHOLE_WORD &lt;x&gt;</dt><dd>(Match whole words if x is nonzero)</dd>
+<dt>EVERYTHING PATH &lt;x&gt;</dt><dd>(Match whole paths if x is nonzero)</dd>
+<dt>EVERYTHING DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics if x is nonzero)</dd>
+<dt>EVERYTHING REGEX &lt;x&gt;</dt><dd>(perform regex search if x is nonzero)</dd>
+<dt>EVERYTHING SEARCH &lt;search-text&gt;</dt><dd>(set the search to search-text)</dd>
+<dt>EVERYTHING FILTER_SEARCH abc</dt><dd>(set the secondary search to abc)</dd>
+<dt>EVERYTHING FILTER_CASE &lt;x&gt;</dt><dd>(Match case with the secondary search if x is nonzero)</dd>
+<dt>EVERYTHING FILTER_WHOLE_WORD &lt;x&gt;</dt><dd>(Match wholewords with the secondary search if x is nonzero)</dd>
+<dt>EVERYTHING FILTER_PATH &lt;x&gt;</dt><dd>(Match path with the secondary search if x is nonzero)</dd>
+<dt>EVERYTHING FILTER_DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics with the secondary search if x is nonzero)</dd>
+<dt>EVERYTHING FILTER_REGEX &lt;x&gt;</dt><dd>(Match regex with the secondary search if x is nonzero)</dd>
+<dt>EVERYTHING SORT &lt;x&gt;</dt><dd>(where x is the sort name, see below)</dd>
+<dt>EVERYTHING OFFSET &lt;n&gt;</dt><dd>(return results from the nth item)</dd>
+<dt>EVERYTHING COUNT &lt;x&gt;</dt><dd>(return no more than x results)</dd>
+<dt>EVERYTHING SIZE_COLUMN &lt;x&gt;</dt><dd>(return the result's size if x is nonzero)</dd>
+<dt>EVERYTHING DATE_CREATED_COLUMN &lt;x&gt;</dt><dd>(return the result's creation date if x is nonzero)</dd>
+<dt>EVERYTHING DATE_MODIFIED_COLUMN &lt;x&gt;</dt><dd>(return the result's modified date if x is nonzero)</dd>
+<dt>EVERYTHING ATTRIBUTES_COLUMN &lt;x&gt;</dt><dd>(return the result's attributes if x is nonzero)</dd>
+<dt>EVERYTHING PATH_COLUMN &lt;x&gt;</dt><dd>(return the result's path if x is nonzero)</dd>
+<dt>EVERYTHING FILE_LIST_FILENAME_COLUMN &lt;x&gt;</dt><dd>(return the result's file list filename if x is nonzero)</dd>
+<dt>EVERYTHING QUERY (executes the query with the above settings)</dd>
 </dl>
-  
-EVERYTHING WHOLE_WORD x (Match whole words if x is nonzero)
-EVERYTHING PATH x (Match whole paths if x is nonzero)
-EVERYTHING DIACRITICS x (Match diacritics if x is nonzero)
-EVERYTHING REGEX x (perform regex search if x is nonzero)
-EVERYTHING SEARCH abc (set the search to abc)
-EVERYTHING FILTER_SEARCH abc (set the secondary search to abc)
-EVERYTHING FILTER_CASE x (Match case with the secondary search if x is nonzero)
-EVERYTHING FILTER_WHOLE_WORD x (Match wholewords with the secondary search if x is nonzero)
-EVERYTHING FILTER_PATH x (Match path with the secondary search if x is nonzero)
-EVERYTHING FILTER_DIACRITICS x (Match diacritics with the secondary search if x is nonzero)
-EVERYTHING FILTER_REGEX x (Match regex with the secondary search if x is nonzero)
-EVERYTHING SORT x (where x is the sort name, see below)
-EVERYTHING OFFSET n (return results from the nth item)
-EVERYTHING COUNT x (return no more than x results)
-EVERYTHING SIZE_COLUMN x (return the result's size if x is nonzero)
-EVERYTHING DATE_CREATED_COLUMN x (return the result's creation date if x is nonzero)
-EVERYTHING DATE_MODIFIED_COLUMN x (return the result's modified date if x is nonzero)
-EVERYTHING ATTRIBUTES_COLUMN x (return the result's attributes if x is nonzero)
-EVERYTHING PATH_COLUMN x (return the result's path if x is nonzero)
-EVERYTHING FILE_LIST_FILENAME_COLUMN x (return the result's file list filename if x is nonzero)
-EVERYTHING QUERY (executes the query with the above settings)
+<br/><br/><br/>
+
+
 
 Default values:
 EVERYTHING CASE 0
