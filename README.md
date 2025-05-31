@@ -5,7 +5,6 @@ Allow users to search and access your files from Everything or an FTP client.
 ETP is FTP with the [SITE EVERYTHING](#SITE-EVERYTHING) extension.
 
 [Download](#download)<br/>
-[SITE EVERYTHING](#SITE-EVERYTHING)
 [Install Guide](#Plug-in-Installation)<br/>
 [Setup Guide](#Plug-in-Setup)<br/>
 [Start an ETP/FTP server](#Start-an-ETP/FTP-server)<br/>
@@ -15,6 +14,7 @@ ETP is FTP with the [SITE EVERYTHING](#SITE-EVERYTHING) extension.
 [Disable file downloading](#Disable-file-downloading)<br/>
 [Different indexes](#Different-indexes)<br/>
 [Create a Windows share](#Create-a-Windows-share)<br/>
+[SITE EVERYTHING](#SITE-EVERYTHING)</br>
 [Security](#Security)<br/>
 [Disable ETP/FTP Server](#Disable-ETP/FTP-Server)<br/>
 [ETP Client path rewriting](#ETP-Client-path-rewriting)<br/>
@@ -46,87 +46,6 @@ Filezilla connected to an ETP/FTP Server:
 ![image](https://github.com/user-attachments/assets/a2555b5b-838f-4598-8ab1-c961aba3c522)
 <br/><br/><br/> 
   
-
-
-SITE EVERYTHING
----------------
-
-The Everything ETP/FTP server extends FTP with the command SITE EVERYTHING.
-
-The Everything client uses this extension to request search results.
-
-You can use the SITE command to check if the ETP/FTP server supports the EVERYTHING extension.
-
-EVERYTHING CASE x (Match case if x is nonzero)
-EVERYTHING WHOLE_WORD x (Match whole words if x is nonzero)
-EVERYTHING PATH x (Match whole paths if x is nonzero)
-EVERYTHING DIACRITICS x (Match diacritics if x is nonzero)
-EVERYTHING REGEX x (perform regex search if x is nonzero)
-EVERYTHING SEARCH abc (set the search to abc)
-EVERYTHING FILTER_SEARCH abc (set the secondary search to abc)
-EVERYTHING FILTER_CASE x (Match case with the secondary search if x is nonzero)
-EVERYTHING FILTER_WHOLE_WORD x (Match wholewords with the secondary search if x is nonzero)
-EVERYTHING FILTER_PATH x (Match path with the secondary search if x is nonzero)
-EVERYTHING FILTER_DIACRITICS x (Match diacritics with the secondary search if x is nonzero)
-EVERYTHING FILTER_REGEX x (Match regex with the secondary search if x is nonzero)
-EVERYTHING SORT x (where x is the sort name, see below)
-EVERYTHING OFFSET n (return results from the nth item)
-EVERYTHING COUNT x (return no more than x results)
-EVERYTHING SIZE_COLUMN x (return the result's size if x is nonzero)
-EVERYTHING DATE_CREATED_COLUMN x (return the result's creation date if x is nonzero)
-EVERYTHING DATE_MODIFIED_COLUMN x (return the result's modified date if x is nonzero)
-EVERYTHING ATTRIBUTES_COLUMN x (return the result's attributes if x is nonzero)
-EVERYTHING PATH_COLUMN x (return the result's path if x is nonzero)
-EVERYTHING FILE_LIST_FILENAME_COLUMN x (return the result's file list filename if x is nonzero)
-EVERYTHING QUERY (executes the query with the above settings)
-
-Default values:
-EVERYTHING CASE 0
-EVERYTHING WHOLE_WORD 0
-EVERYTHING PATH 0
-EVERYTHING DIACRITICS 0
-EVERYTHING REGEX 0
-EVERYTHING SEARCH
-EVERYTHING FILTER_SEARCH
-EVERYTHING FILTER_CASE 0
-EVERYTHING FILTER_WHOLE_WORD 0
-EVERYTHING FILTER_PATH 0
-EVERYTHING FILTER_DIACRITICS 0
-EVERYTHING FILTER_REGEX 0
-EVERYTHING SORT 0
-EVERYTHING OFFSET 0
-EVERYTHING COUNT 0
-EVERYTHING SIZE_COLUMN 0
-EVERYTHING DATE_CREATED_COLUMN 0
-EVERYTHING DATE_MODIFIED_COLUMN 0
-EVERYTHING ATTRIBUTES_COLUMN 0
-EVERYTHING PATH_COLUMN 0
-EVERYTHING FILE_LIST_FILENAME_COLUMN 0
-
-For example, find the first 100 items that contain abc:
-EVERYTHING SEARCH abc
-EVERYTHING COUNT 100
-EVERYTHING PATH_COLUMN 1
-EVERYTHING QUERY
-
-Sort names
-NAME_ASCENDING
-NAME_DESCENDING
-PATH_ASCENDING
-PATH_DESCENDING
-SIZE_ASCENDING
-SIZE_DESCENDING
-EXTENSION_ASCENDING
-EXTENSION_DESCENDING
-DATE_CREATED_ASCENDING
-DATE_CREATED_DESCENDING
-DATE_MODIFIED_ASCENDING
-DATE_MODIFIED_DESCENDING
-ATTRIBUTES_ASCENDING
-ATTRIBUTES_DESCENDING
-FILE_LIST_FILENAME_ASCENDING
-FILE_LIST_FILENAME_DESCENDING
-
 
 
 Plug-in Installation
@@ -298,6 +217,87 @@ Connect to the ETP/FTP server with \\\\Server\\C links.
 <br/><br/><br/>
 
   
+
+SITE EVERYTHING
+---------------
+
+The Everything ETP/FTP server extends FTP with the command SITE EVERYTHING.
+
+The Everything client uses this extension to request search results.
+
+You can use the SITE command to check if the ETP/FTP server supports the EVERYTHING extension.
+
+EVERYTHING CASE x (Match case if x is nonzero)
+EVERYTHING WHOLE_WORD x (Match whole words if x is nonzero)
+EVERYTHING PATH x (Match whole paths if x is nonzero)
+EVERYTHING DIACRITICS x (Match diacritics if x is nonzero)
+EVERYTHING REGEX x (perform regex search if x is nonzero)
+EVERYTHING SEARCH abc (set the search to abc)
+EVERYTHING FILTER_SEARCH abc (set the secondary search to abc)
+EVERYTHING FILTER_CASE x (Match case with the secondary search if x is nonzero)
+EVERYTHING FILTER_WHOLE_WORD x (Match wholewords with the secondary search if x is nonzero)
+EVERYTHING FILTER_PATH x (Match path with the secondary search if x is nonzero)
+EVERYTHING FILTER_DIACRITICS x (Match diacritics with the secondary search if x is nonzero)
+EVERYTHING FILTER_REGEX x (Match regex with the secondary search if x is nonzero)
+EVERYTHING SORT x (where x is the sort name, see below)
+EVERYTHING OFFSET n (return results from the nth item)
+EVERYTHING COUNT x (return no more than x results)
+EVERYTHING SIZE_COLUMN x (return the result's size if x is nonzero)
+EVERYTHING DATE_CREATED_COLUMN x (return the result's creation date if x is nonzero)
+EVERYTHING DATE_MODIFIED_COLUMN x (return the result's modified date if x is nonzero)
+EVERYTHING ATTRIBUTES_COLUMN x (return the result's attributes if x is nonzero)
+EVERYTHING PATH_COLUMN x (return the result's path if x is nonzero)
+EVERYTHING FILE_LIST_FILENAME_COLUMN x (return the result's file list filename if x is nonzero)
+EVERYTHING QUERY (executes the query with the above settings)
+
+Default values:
+EVERYTHING CASE 0
+EVERYTHING WHOLE_WORD 0
+EVERYTHING PATH 0
+EVERYTHING DIACRITICS 0
+EVERYTHING REGEX 0
+EVERYTHING SEARCH
+EVERYTHING FILTER_SEARCH
+EVERYTHING FILTER_CASE 0
+EVERYTHING FILTER_WHOLE_WORD 0
+EVERYTHING FILTER_PATH 0
+EVERYTHING FILTER_DIACRITICS 0
+EVERYTHING FILTER_REGEX 0
+EVERYTHING SORT 0
+EVERYTHING OFFSET 0
+EVERYTHING COUNT 0
+EVERYTHING SIZE_COLUMN 0
+EVERYTHING DATE_CREATED_COLUMN 0
+EVERYTHING DATE_MODIFIED_COLUMN 0
+EVERYTHING ATTRIBUTES_COLUMN 0
+EVERYTHING PATH_COLUMN 0
+EVERYTHING FILE_LIST_FILENAME_COLUMN 0
+
+For example, find the first 100 items that contain abc:
+EVERYTHING SEARCH abc
+EVERYTHING COUNT 100
+EVERYTHING PATH_COLUMN 1
+EVERYTHING QUERY
+
+Sort names
+NAME_ASCENDING
+NAME_DESCENDING
+PATH_ASCENDING
+PATH_DESCENDING
+SIZE_ASCENDING
+SIZE_DESCENDING
+EXTENSION_ASCENDING
+EXTENSION_DESCENDING
+DATE_CREATED_ASCENDING
+DATE_CREATED_DESCENDING
+DATE_MODIFIED_ASCENDING
+DATE_MODIFIED_DESCENDING
+ATTRIBUTES_ASCENDING
+ATTRIBUTES_DESCENDING
+FILE_LIST_FILENAME_ASCENDING
+FILE_LIST_FILENAME_DESCENDING
+
+
 
 Security
 --------
