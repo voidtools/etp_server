@@ -325,6 +325,11 @@ To uninstall the Everything client service:
     <code>Everything.exe -uninstall-client-service</code>
 <br/><br/><br/>
 
+
+
+[Everything Client Service](https://www.voidtools.com/forum/viewtopic.php?t=1982)
+<br/><br/><br/>
+
   
 
 Automatically connect to an ETP server
@@ -481,6 +486,7 @@ See also
 *   [Multiple Instances](https://www.voidtools.com/support/everything/multiple_instances)
 *   https://www.voidtools.com/support/everything/etp/
 *   [ETP/FTP Server Help](https://www.voidtools.com/forum/viewtopic.php?p=5731)
+*   [Everything Client Service](https://www.voidtools.com/forum/viewtopic.php?t=1982)
 *   [Everything Server](https://github.com/voidtools/everything_server)
 *   [Everything 1.5 Plugins - ETP/FTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
 *   [Everything 1.5 Plugin SDK](https://www.voidtools.com/forum/viewtopic.php?t=16535)
