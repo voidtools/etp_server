@@ -20,7 +20,7 @@ The [Everything Server](https://github.com/voidtools/everything_server) replaces
 [Create a Windows share](#Create-a-Windows-share)<br/>
 [SITE EVERYTHING](#SITE-EVERYTHING)</br>
 [Security](#Security)<br/>
-[Disable ETP/FTP Server](#Disable-ETP/FTP-Server)<br/>
+[Disable ETP/FTP Server](#Disable-ETPFTP-Server)<br/>
 [ETP Client path rewriting](#ETP-Client-path-rewriting)<br/>
 [Running an ETP server as a service](#Running-an-ETP-server-as-a-service)<br/>
 [Automatically connect to an ETP server](#Automatically-connect-to-an-ETP-server)<br/>
@@ -334,7 +334,7 @@ To disable file downloading:
 *   Click the **ETP Server** tab.
 *   Uncheck **allow file download**.
 
-See [Disable ETP/FTP Server](#Disable-ETP/FTP-Server) to remove the ETP server options and prevent the ETP server from starting.
+See [Disable ETP/FTP Server](#Disable-ETPFTP-Server) to remove the ETP server options and prevent the ETP server from starting.
 <br/><br/><br/>
 
   
