@@ -446,7 +446,9 @@ Sort names
 
 
 ETP also supports the <code>EVERYTHING</code> command.
+
 Use <code>FEAT</code> to check if the EVERYTHING command is supported.
+
 The <code>EVERYTHING</code> command is the same as the <code>SITE EVERYTHING</code> command.
 <br/><br/><br/>
 
