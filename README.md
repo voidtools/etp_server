@@ -486,6 +486,8 @@ See also
 *   [Multiple Instances](https://www.voidtools.com/support/everything/multiple_instances)
 *   https://www.voidtools.com/support/everything/etp/
 *   [ETP/FTP Server Help](https://www.voidtools.com/forum/viewtopic.php?p=5731)
+*   [ETP/FTP Server Everything.ini options](https://www.voidtools.com/support/everything/ini#etp)
+*   [ETP/FTP Server options](https://www.voidtools.com/support/everything/options#etp_server)
 *   [Everything Client Service](https://www.voidtools.com/forum/viewtopic.php?t=1982)
 *   [Everything Server](https://github.com/voidtools/everything_server)
 *   [Everything 1.5 Plugins - ETP/FTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
