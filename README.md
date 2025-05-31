@@ -186,7 +186,7 @@ For example, we want to host an ETP/FTP server for one folder:
 
 Substitute a drive letter for the local folder c:\\share:
 
-*   From a command prompt, run:
+*   From a command prompt, run:<br/>
     <code>subst H: c:\\share</code>
 <br/><br/><br/>
 
@@ -322,14 +322,10 @@ To disable the ETP/FTP server:
 
 *   Exit Everything (right click the Everything system tray icon and click Exit)
 *   Open your Everything.ini in the same location as your Everything.exe
-*   Change the following line:
-
-    <code>allow\_etp\_server=1</code>
-
-    to:
-
+*   Change the following line:<br/>
+    <code>allow\_etp\_server=1</code><br/>
+    to:<br/>
     <code>allow\_etp\_server=0</code>
-    
 *   Save changes and restart Everything.
 <br/><br/><br/>
 
@@ -346,12 +342,10 @@ To rewrite the paths on the ETP client.
 *   On the **_Everything_** ETP client PC:
 *   Completely exit **_Everything_** (Right click the **_Everything_** system tray icon and click Exit)
 *   Open your %APPDATA%\\Everything\\Everything.ini
-*   Change the following lines:
+*   Change the following lines:<br/>
     <code>etp\_client\_rewrite\_patterns=
-    etp\_client\_rewrite\_substitutions=</code>
-    
-    to:
-    
+    etp\_client\_rewrite\_substitutions=</code><br/>
+    to:<br/>
     <code>etp\_client\_rewrite\_patterns=D:\\music;"D:\\\\Install Files"
     etp\_client\_rewrite\_substitutions=\\\\server\\music;"\\\\\\\\server\\\\Install Files"</code>
 *   Save changes and restart Everything.
@@ -374,9 +368,8 @@ To run an Everything ETP server as a client service (not to be confused with the
 *   Setup the [ETP server settings](/support/everything/options/#etp_ftp_server).
 *   Completely exit Everything (right click the Everything tray icon and click Exit).
 *   From a command prompt, navigate to your Everything.exe
-*   Run the following command to install the client service:
-    <code>Everything.exe -install-client-service</code>
-    
+*   Run the following command to install the client service:<br/>
+    <code>Everything.exe -install-client-service</code><br/>    
     This will install and start the Everything ETP server as a service.
 <br/><br/><br/>
 
@@ -385,7 +378,7 @@ To run an Everything ETP server as a client service (not to be confused with the
 To uninstall the Everything client service:
 
 *   From a command prompt, navigate to your Everything.exe
-*   Run the following command to install the client service:
+*   Run the following command to install the client service:<br/>
     <code>Everything.exe -uninstall-client-service</code>
 <br/><br/><br/>
 
