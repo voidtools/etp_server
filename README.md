@@ -356,7 +356,7 @@ The Everything ETP/FTP server extends FTP with the <code>SITE EVERYTHING</code> 
 
 The Everything client uses this extension to request search results.
 
-Use the <code>SITE</code> command to check if the ETP/FTP server supports the <code>SITE EVERYTHING</code> extension.
+Use the <code>HELP SITE</code> command to check if the ETP/FTP server supports the <code>SITE EVERYTHING</code> extension.
 <br/><br/><br/>
 
 
