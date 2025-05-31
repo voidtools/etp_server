@@ -357,28 +357,28 @@ You can use the <code>SITE</code> command to check if the ETP/FTP server support
 <code>SITE EVERYTHING</code> commands:
 
 <dl>
-<dt>SITE EVERYTHING CASE &lt;x&gt;</dt><dd>(Match case if x is nonzero)</dd>
-<dt>SITE EVERYTHING WHOLE_WORD &lt;x&gt;</dt><dd>(Match whole words if x is nonzero)</dd>
-<dt>SITE EVERYTHING PATH &lt;x&gt;</dt><dd>(Match whole paths if x is nonzero)</dd>
-<dt>SITE EVERYTHING DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics if x is nonzero)</dd>
-<dt>SITE EVERYTHING REGEX &lt;x&gt;</dt><dd>(perform regex search if x is nonzero)</dd>
-<dt>SITE EVERYTHING SEARCH &lt;search-text&gt;</dt><dd>(set the search to search-text)</dd>
-<dt>SITE EVERYTHING FILTER_SEARCH abc</dt><dd>(set the secondary search to abc)</dd>
-<dt>SITE EVERYTHING FILTER_CASE &lt;x&gt;</dt><dd>(Match case with the secondary search if x is nonzero)</dd>
-<dt>SITE EVERYTHING FILTER_WHOLE_WORD &lt;x&gt;</dt><dd>(Match wholewords with the secondary search if x is nonzero)</dd>
-<dt>SITE EVERYTHING FILTER_PATH &lt;x&gt;</dt><dd>(Match path with the secondary search if x is nonzero)</dd>
-<dt>SITE EVERYTHING FILTER_DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics with the secondary search if x is nonzero)</dd>
-<dt>SITE EVERYTHING FILTER_REGEX &lt;x&gt;</dt><dd>(Match regex with the secondary search if x is nonzero)</dd>
-<dt>SITE EVERYTHING SORT &lt;x&gt;</dt><dd>(where x is the sort name, see below)</dd>
-<dt>SITE EVERYTHING OFFSET &lt;n&gt;</dt><dd>(return results from the nth item)</dd>
-<dt>SITE EVERYTHING COUNT &lt;x&gt;</dt><dd>(return no more than x results)</dd>
-<dt>SITE EVERYTHING SIZE_COLUMN &lt;x&gt;</dt><dd>(return the result's size if x is nonzero)</dd>
-<dt>SITE EVERYTHING DATE_CREATED_COLUMN &lt;x&gt;</dt><dd>(return the result's creation date if x is nonzero)</dd>
-<dt>SITE EVERYTHING DATE_MODIFIED_COLUMN &lt;x&gt;</dt><dd>(return the result's modified date if x is nonzero)</dd>
-<dt>SITE EVERYTHING ATTRIBUTES_COLUMN &lt;x&gt;</dt><dd>(return the result's attributes if x is nonzero)</dd>
-<dt>SITE EVERYTHING PATH_COLUMN &lt;x&gt;</dt><dd>(return the result's path if x is nonzero)</dd>
-<dt>SITE EVERYTHING FILE_LIST_FILENAME_COLUMN &lt;x&gt;</dt><dd>(return the result's file list filename if x is nonzero)</dd>
-<dt>SITE EVERYTHING QUERY</dt><dd>executes the query with the current search state</dd>
+<dt>SITE EVERYTHING CASE &lt;x&gt;</dt><dd>Match case if x is nonzero.</dd>
+<dt>SITE EVERYTHING WHOLE_WORD &lt;x&gt;</dt><dd>Match whole words if x is nonzero.</dd>
+<dt>SITE EVERYTHING PATH &lt;x&gt;</dt><dd>Match whole paths if x is nonzero.</dd>
+<dt>SITE EVERYTHING DIACRITICS &lt;x&gt;</dt><dd>Match diacritics if x is nonzero.</dd>
+<dt>SITE EVERYTHING REGEX &lt;x&gt;</dt><dd>Perform a regex search if x is nonzero.</dd>
+<dt>SITE EVERYTHING SEARCH &lt;search-text&gt;</dt><dd>Set the search to search-text.</dd>
+<dt>SITE EVERYTHING FILTER_SEARCH &lt;search-text&gt;</dt><dd>Set the secondary search to search-text.</dd>
+<dt>SITE EVERYTHING FILTER_CASE &lt;x&gt;</dt><dd>Match case with the secondary search if x is nonzero.</dd>
+<dt>SITE EVERYTHING FILTER_WHOLE_WORD &lt;x&gt;</dt><dd>Match wholewords with the secondary search if x is nonzero.</dd>
+<dt>SITE EVERYTHING FILTER_PATH &lt;x&gt;</dt><dd>Match path with the secondary search if x is nonzero.</dd>
+<dt>SITE EVERYTHING FILTER_DIACRITICS &lt;x&gt;</dt><dd>Match diacritics with the secondary search if x is nonzero.</dd>
+<dt>SITE EVERYTHING FILTER_REGEX &lt;x&gt;</dt><dd>Match regex with the secondary search if x is nonzero.</dd>
+<dt>SITE EVERYTHING SORT &lt;x&gt;</dt><dd>Where x is the sort name, see below.</dd>
+<dt>SITE EVERYTHING OFFSET &lt;n&gt;</dt><dd>Return results from the nth item.</dd>
+<dt>SITE EVERYTHING COUNT &lt;n&gt;</dt><dd>Return no more than n results.</dd>
+<dt>SITE EVERYTHING SIZE_COLUMN &lt;x&gt;</dt><dd>Return the result's size if x is nonzero.</dd>
+<dt>SITE EVERYTHING DATE_CREATED_COLUMN &lt;x&gt;</dt><dd>Return the result's creation date if x is nonzero.</dd>
+<dt>SITE EVERYTHING DATE_MODIFIED_COLUMN &lt;x&gt;</dt><dd>Return the result's modified date if x is nonzero.</dd>
+<dt>SITE EVERYTHING ATTRIBUTES_COLUMN &lt;x&gt;</dt><dd>Return the result's attributes if x is nonzero.</dd>
+<dt>SITE EVERYTHING PATH_COLUMN &lt;x&gt;</dt><dd>Return the result's path if x is nonzero.</dd>
+<dt>SITE EVERYTHING FILE_LIST_FILENAME_COLUMN &lt;x&gt;</dt><dd>Return the result's file list filename if x is nonzero.</dd>
+<dt>SITE EVERYTHING QUERY</dt><dd>Executes the query with the current search state.</dd>
 </dl>
 <br/><br/><br/>
 
