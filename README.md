@@ -452,7 +452,7 @@ Sort names:
 
 
 
-ETP also supports the <code>EVERYTHING</code> command.
+The ETP/FTP server also supports the <code>EVERYTHING</code> command.
 
 Use <code>FEAT</code> to check if the EVERYTHING command is supported.
 
