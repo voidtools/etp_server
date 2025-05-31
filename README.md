@@ -352,7 +352,7 @@ The Everything client uses this extension to request search results.
 You can use the SITE command to check if the ETP/FTP server supports the EVERYTHING extension.
 
 <dl>
-<dt>EVERYTHING CASE \<x\></dt><dd>(Match case if x is nonzero)</dd>
+<dt>EVERYTHING CASE `<x>`</dt><dd>(Match case if x is nonzero)</dd>
 </dl>
   
 EVERYTHING WHOLE_WORD x (Match whole words if x is nonzero)
