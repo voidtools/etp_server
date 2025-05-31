@@ -4,6 +4,8 @@ Allow users to search and access your files from Everything or an FTP client.
 
 ETP is FTP with the [SITE EVERYTHING](#SITE-EVERYTHING) extension.
 
+The [Everything Server](https://github.com/voidtools/everything_server) replaces the ETP/FTP server.
+
 [Download](#download)<br/>
 [Install Guide](#Plug-in-Installation)<br/>
 [Setup Guide](#Plug-in-Setup)<br/>
@@ -13,6 +15,7 @@ ETP is FTP with the [SITE EVERYTHING](#SITE-EVERYTHING) extension.
 [Username and password](#Username-and-password)<br/>
 [Disable file downloading](#Disable-file-downloading)<br/>
 [Multiple instances](#Multiple-instances)<br/>
+[Connect to multiple servers](#Connect-to-multiple-servers)<br/>
 [Create a Windows share](#Create-a-Windows-share)<br/>
 [SITE EVERYTHING](#SITE-EVERYTHING)</br>
 [Security](#Security)<br/>
@@ -170,6 +173,26 @@ To index different NTFS volumes for the ETP server, see [Multiple Instances](htt
 <br/><br/><br/>
 
   
+
+Connect to multiple servers
+---------------------------
+
+Everything can only connect to one ETP server at a time.
+
+Use the [Everything Server](https://github.com/voidtools/everything_server) to index multiple remote Everything indexes.
+<br/><br/><br/>
+
+  
+
+Index ETP server
+----------------
+
+Everything cannot index ETP servers.
+
+Use the [Everything Server](https://github.com/voidtools/everything_server) to index a remote Everything index.
+<br/><br/><br/>
+
+
 
 Create a Windows share
 ----------------------
@@ -426,5 +449,6 @@ See also
 *   [Multiple Instances](https://www.voidtools.com/support/everything/multiple_instances)
 *   https://www.voidtools.com/support/everything/etp/
 *   [ETP/FTP Server Help](https://www.voidtools.com/forum/viewtopic.php?p=5731)
+*   [Everything Server](https://github.com/voidtools/everything_server)
 *   [Everything 1.5 Plugins - ETP/FTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
 *   [Everything 1.5 Plugin SDK](https://www.voidtools.com/forum/viewtopic.php?t=16535)
