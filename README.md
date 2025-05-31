@@ -350,6 +350,11 @@ The Everything ETP/FTP server extends FTP with the command <code>SITE EVERYTHING
 The Everything client uses this extension to request search results.
 
 You can use the <code>SITE</code> command to check if the ETP/FTP server supports the <code>SITE EVERYTHING</code> extension.
+<br/><br/><br/>
+
+
+
+<code>SITE EVERYTHING</code> commands:
 
 <dl>
 <dt>SITE EVERYTHING CASE &lt;x&gt;</dt><dd>(Match case if x is nonzero)</dd>
