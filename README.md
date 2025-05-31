@@ -16,6 +16,7 @@ The [Everything Server](https://github.com/voidtools/everything_server) replaces
 [Disable file downloading](#Disable-file-downloading)<br/>
 [Multiple instances](#Multiple-instances)<br/>
 [Connect to multiple servers](#Connect-to-multiple-servers)<br/>
+[Index ETP server](#Index-ETP-server)<br/>
 [Create a Windows share](#Create-a-Windows-share)<br/>
 [SITE EVERYTHING](#SITE-EVERYTHING)</br>
 [Security](#Security)<br/>
