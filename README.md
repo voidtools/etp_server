@@ -286,11 +286,11 @@ To rewrite the paths on the ETP client.
 *   Completely exit **_Everything_** (Right click the **_Everything_** system tray icon and click Exit)
 *   Open your %APPDATA%\\Everything\\Everything.ini
 *   Change the following lines:<br/>
-    <code>etp\_client\_rewrite\_patterns=
-    etp\_client\_rewrite\_substitutions=</code><br/>
+    <code>etp\_client\_rewrite\_patterns=</code><br/>
+    <code>etp\_client\_rewrite\_substitutions=</code><br/>
     to:<br/>
-    <code>etp\_client\_rewrite\_patterns=D:\\music;"D:\\\\Install Files"
-    etp\_client\_rewrite\_substitutions=\\\\server\\music;"\\\\\\\\server\\\\Install Files"</code>
+    <code>etp\_client\_rewrite\_patterns=D:\\music;"D:\\\\Install Files"</code><br/>
+    <code>etp\_client\_rewrite\_substitutions=\\\\server\\music;"\\\\\\\\server\\\\Install Files"</code>
 *   Save changes and restart Everything.
 
 The pattern must match the path on the server. It is not effected by the link type.
@@ -351,7 +351,10 @@ The Everything client uses this extension to request search results.
 
 You can use the SITE command to check if the ETP/FTP server supports the EVERYTHING extension.
 
-EVERYTHING CASE x (Match case if x is nonzero)
+<dl>
+<dt>EVERYTHING CASE <x></dt><dd>(Match case if x is nonzero)</dd>
+</dl>
+  
 EVERYTHING WHOLE_WORD x (Match whole words if x is nonzero)
 EVERYTHING PATH x (Match whole paths if x is nonzero)
 EVERYTHING DIACRITICS x (Match diacritics if x is nonzero)
@@ -420,6 +423,14 @@ ATTRIBUTES_ASCENDING
 ATTRIBUTES_DESCENDING
 FILE_LIST_FILENAME_ASCENDING
 FILE_LIST_FILENAME_DESCENDING
+<br/><br/><br/>
+
+
+
+ETP also supports the <code>EVERYTHING</code> command.
+Use <code>FEAT</code> to check if the EVERYTHING command is supported.
+The <code>EVERYTHING</code> command is the same as the <code>SITE EVERYTHING</code> command.
+<br/><br/><br/>
 
 
 
