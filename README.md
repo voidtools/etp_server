@@ -386,7 +386,7 @@ Default state:
 <tr><td>EVERYTHING PATH</td><td>0</td></tr>
 <tr><td>EVERYTHING DIACRITICS</td><td>0</td></tr>
 <tr><td>EVERYTHING REGEX</td><td>0</td></tr>
-<tr><td>EVERYTHING SEAR</td><td>H</td></tr>
+<tr><td>EVERYTHING SEARCH</td><td></td></tr>
 <tr><td>EVERYTHING FILTER_SEARCH</td><td></td></tr>
 <tr><td>EVERYTHING FILTER_CASE</td><td>0</td></tr>
 <tr><td>EVERYTHING FILTER_WHOLE_WORD</td><td>0</td></tr>
