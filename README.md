@@ -106,8 +106,12 @@ When connecting to an ETP server you can specify the link type.
 
 <table>
 <tr><th>Link type</th><th>Description</th></tr>
-<tr><td>C:</td><td>No change, the paths are the same as they are on the server. This is useful if you index a subst'ed drive on the server and are using mapped network drives on the client.</td></tr>
-<tr><td>\\\\Server\\C</td><td>Use Windows shares (this is the default link type). By default these shares do not exist, you will need to create them on the server if you wish to use this method.</td></tr>
+<tr><td>C:</td><td>No change, the paths are the same as they are on the server. 
+  
+This is useful if you index a subst'ed drive on the server and are using mapped network drives on the client.</td></tr>
+<tr><td>\\\\Server\\C</td><td>Use Windows shares (this is the default link type). 
+  
+By default these shares do not exist, you will need to create them on the server if you wish to use this method.</td></tr>
 <tr><td>\\\\Server\\C$</td><td>Use the default admin drive shares.</td></tr>
 <tr><td>ftp://host/C:</td><td>Use ftp links.</td></tr>
 </table>
