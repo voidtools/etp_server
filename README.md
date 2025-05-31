@@ -423,7 +423,7 @@ SITE EVERYTHING QUERY</pre>
 
 
 
-Sort names
+Sort names:
 
 *   NAME_ASCENDING
 *   NAME_DESCENDING
