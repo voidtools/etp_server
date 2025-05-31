@@ -352,79 +352,89 @@ The Everything client uses this extension to request search results.
 You can use the SITE command to check if the ETP/FTP server supports the EVERYTHING extension.
 
 <dl>
-<dt>EVERYTHING CASE &lt;x&gt;</dt><dd>(Match case if x is nonzero)</dd>
-<dt>EVERYTHING WHOLE_WORD &lt;x&gt;</dt><dd>(Match whole words if x is nonzero)</dd>
-<dt>EVERYTHING PATH &lt;x&gt;</dt><dd>(Match whole paths if x is nonzero)</dd>
-<dt>EVERYTHING DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics if x is nonzero)</dd>
-<dt>EVERYTHING REGEX &lt;x&gt;</dt><dd>(perform regex search if x is nonzero)</dd>
-<dt>EVERYTHING SEARCH &lt;search-text&gt;</dt><dd>(set the search to search-text)</dd>
-<dt>EVERYTHING FILTER_SEARCH abc</dt><dd>(set the secondary search to abc)</dd>
-<dt>EVERYTHING FILTER_CASE &lt;x&gt;</dt><dd>(Match case with the secondary search if x is nonzero)</dd>
-<dt>EVERYTHING FILTER_WHOLE_WORD &lt;x&gt;</dt><dd>(Match wholewords with the secondary search if x is nonzero)</dd>
-<dt>EVERYTHING FILTER_PATH &lt;x&gt;</dt><dd>(Match path with the secondary search if x is nonzero)</dd>
-<dt>EVERYTHING FILTER_DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics with the secondary search if x is nonzero)</dd>
-<dt>EVERYTHING FILTER_REGEX &lt;x&gt;</dt><dd>(Match regex with the secondary search if x is nonzero)</dd>
-<dt>EVERYTHING SORT &lt;x&gt;</dt><dd>(where x is the sort name, see below)</dd>
-<dt>EVERYTHING OFFSET &lt;n&gt;</dt><dd>(return results from the nth item)</dd>
-<dt>EVERYTHING COUNT &lt;x&gt;</dt><dd>(return no more than x results)</dd>
-<dt>EVERYTHING SIZE_COLUMN &lt;x&gt;</dt><dd>(return the result's size if x is nonzero)</dd>
-<dt>EVERYTHING DATE_CREATED_COLUMN &lt;x&gt;</dt><dd>(return the result's creation date if x is nonzero)</dd>
-<dt>EVERYTHING DATE_MODIFIED_COLUMN &lt;x&gt;</dt><dd>(return the result's modified date if x is nonzero)</dd>
-<dt>EVERYTHING ATTRIBUTES_COLUMN &lt;x&gt;</dt><dd>(return the result's attributes if x is nonzero)</dd>
-<dt>EVERYTHING PATH_COLUMN &lt;x&gt;</dt><dd>(return the result's path if x is nonzero)</dd>
-<dt>EVERYTHING FILE_LIST_FILENAME_COLUMN &lt;x&gt;</dt><dd>(return the result's file list filename if x is nonzero)</dd>
-<dt>EVERYTHING QUERY (executes the query with the above settings)</dd>
+<dt>SITE EVERYTHING CASE &lt;x&gt;</dt><dd>(Match case if x is nonzero)</dd>
+<dt>SITE EVERYTHING WHOLE_WORD &lt;x&gt;</dt><dd>(Match whole words if x is nonzero)</dd>
+<dt>SITE EVERYTHING PATH &lt;x&gt;</dt><dd>(Match whole paths if x is nonzero)</dd>
+<dt>SITE EVERYTHING DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics if x is nonzero)</dd>
+<dt>SITE EVERYTHING REGEX &lt;x&gt;</dt><dd>(perform regex search if x is nonzero)</dd>
+<dt>SITE EVERYTHING SEARCH &lt;search-text&gt;</dt><dd>(set the search to search-text)</dd>
+<dt>SITE EVERYTHING FILTER_SEARCH abc</dt><dd>(set the secondary search to abc)</dd>
+<dt>SITE EVERYTHING FILTER_CASE &lt;x&gt;</dt><dd>(Match case with the secondary search if x is nonzero)</dd>
+<dt>SITE EVERYTHING FILTER_WHOLE_WORD &lt;x&gt;</dt><dd>(Match wholewords with the secondary search if x is nonzero)</dd>
+<dt>SITE EVERYTHING FILTER_PATH &lt;x&gt;</dt><dd>(Match path with the secondary search if x is nonzero)</dd>
+<dt>SITE EVERYTHING FILTER_DIACRITICS &lt;x&gt;</dt><dd>(Match diacritics with the secondary search if x is nonzero)</dd>
+<dt>SITE EVERYTHING FILTER_REGEX &lt;x&gt;</dt><dd>(Match regex with the secondary search if x is nonzero)</dd>
+<dt>SITE EVERYTHING SORT &lt;x&gt;</dt><dd>(where x is the sort name, see below)</dd>
+<dt>SITE EVERYTHING OFFSET &lt;n&gt;</dt><dd>(return results from the nth item)</dd>
+<dt>SITE EVERYTHING COUNT &lt;x&gt;</dt><dd>(return no more than x results)</dd>
+<dt>SITE EVERYTHING SIZE_COLUMN &lt;x&gt;</dt><dd>(return the result's size if x is nonzero)</dd>
+<dt>SITE EVERYTHING DATE_CREATED_COLUMN &lt;x&gt;</dt><dd>(return the result's creation date if x is nonzero)</dd>
+<dt>SITE EVERYTHING DATE_MODIFIED_COLUMN &lt;x&gt;</dt><dd>(return the result's modified date if x is nonzero)</dd>
+<dt>SITE EVERYTHING ATTRIBUTES_COLUMN &lt;x&gt;</dt><dd>(return the result's attributes if x is nonzero)</dd>
+<dt>SITE EVERYTHING PATH_COLUMN &lt;x&gt;</dt><dd>(return the result's path if x is nonzero)</dd>
+<dt>SITE EVERYTHING FILE_LIST_FILENAME_COLUMN &lt;x&gt;</dt><dd>(return the result's file list filename if x is nonzero)</dd>
+<dt>SITE EVERYTHING QUERY</dt><dd>executes the query with the current search state</dd>
 </dl>
 <br/><br/><br/>
 
 
 
-Default values:
-EVERYTHING CASE 0
-EVERYTHING WHOLE_WORD 0
-EVERYTHING PATH 0
-EVERYTHING DIACRITICS 0
-EVERYTHING REGEX 0
-EVERYTHING SEARCH
-EVERYTHING FILTER_SEARCH
-EVERYTHING FILTER_CASE 0
-EVERYTHING FILTER_WHOLE_WORD 0
-EVERYTHING FILTER_PATH 0
-EVERYTHING FILTER_DIACRITICS 0
-EVERYTHING FILTER_REGEX 0
-EVERYTHING SORT 0
-EVERYTHING OFFSET 0
-EVERYTHING COUNT 0
-EVERYTHING SIZE_COLUMN 0
-EVERYTHING DATE_CREATED_COLUMN 0
-EVERYTHING DATE_MODIFIED_COLUMN 0
-EVERYTHING ATTRIBUTES_COLUMN 0
-EVERYTHING PATH_COLUMN 0
-EVERYTHING FILE_LIST_FILENAME_COLUMN 0
+Default state:
+<table>
+<tr><td>EVERYTHING CASE</td><td>0</td></tr>
+<tr><td>EVERYTHING WHOLE_WORD</td><td>0</td></tr>
+<tr><td>EVERYTHING PATH</td><td>0</td></tr>
+<tr><td>EVERYTHING DIACRITICS</td><td>0</td></tr>
+<tr><td>EVERYTHING REGEX</td><td>0</td></tr>
+<tr><td>EVERYTHING SEAR</td><td>H</td></tr>
+<tr><td>EVERYTHING FILTER_SEARCH</td><td></td></tr>
+<tr><td>EVERYTHING FILTER_CASE</td><td>0</td></tr>
+<tr><td>EVERYTHING FILTER_WHOLE_WORD</td><td>0</td></tr>
+<tr><td>EVERYTHING FILTER_PATH</td><td>0</td></tr>
+<tr><td>EVERYTHING FILTER_DIACRITICS</td><td>0</td></tr>
+<tr><td>EVERYTHING FILTER_REGEX</td><td>0</td></tr>
+<tr><td>EVERYTHING SORT</td><td>0</td></tr>
+<tr><td>EVERYTHING OFFSET</td><td>0</td></tr>
+<tr><td>EVERYTHING COUNT</td><td>0</td></tr>
+<tr><td>EVERYTHING SIZE_COLUMN</td><td>0</td></tr>
+<tr><td>EVERYTHING DATE_CREATED_COLUMN</td><td>0</td></tr>
+<tr><td>EVERYTHING DATE_MODIFIED_COLUMN</td><td>0</td></tr>
+<tr><td>EVERYTHING ATTRIBUTES_COLUMN</td><td>0</td></tr>
+<tr><td>EVERYTHING PATH_COLUMN</td><td>0</td></tr>
+<tr><td>EVERYTHING FILE_LIST_FILENAME_COLUMN</td><td>0</td></tr>
+</table>
+<br/><br/><br/>
 
-For example, find the first 100 items that contain abc:
-EVERYTHING SEARCH abc
+
+
+For example, to find the first 100 items that contain abc:
+
+<code>EVERYTHING SEARCH abc
 EVERYTHING COUNT 100
 EVERYTHING PATH_COLUMN 1
-EVERYTHING QUERY
+EVERYTHING QUERY</code>
+<br/><br/><br/>
+
+
 
 Sort names
-NAME_ASCENDING
-NAME_DESCENDING
-PATH_ASCENDING
-PATH_DESCENDING
-SIZE_ASCENDING
-SIZE_DESCENDING
-EXTENSION_ASCENDING
-EXTENSION_DESCENDING
-DATE_CREATED_ASCENDING
-DATE_CREATED_DESCENDING
-DATE_MODIFIED_ASCENDING
-DATE_MODIFIED_DESCENDING
-ATTRIBUTES_ASCENDING
-ATTRIBUTES_DESCENDING
-FILE_LIST_FILENAME_ASCENDING
-FILE_LIST_FILENAME_DESCENDING
+
+*   NAME_ASCENDING
+*   NAME_DESCENDING
+*   PATH_ASCENDING
+*   PATH_DESCENDING
+*   SIZE_ASCENDING
+*   SIZE_DESCENDING
+*   EXTENSION_ASCENDING
+*   EXTENSION_DESCENDING
+*   DATE_CREATED_ASCENDING
+*   DATE_CREATED_DESCENDING
+*   DATE_MODIFIED_ASCENDING
+*   DATE_MODIFIED_DESCENDING
+*   ATTRIBUTES_ASCENDING
+*   ATTRIBUTES_DESCENDING
+*   FILE_LIST_FILENAME_ASCENDING
+*   FILE_LIST_FILENAME_DESCENDING
 <br/><br/><br/>
 
 
