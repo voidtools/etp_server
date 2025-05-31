@@ -12,7 +12,7 @@ ETP is FTP with the [SITE EVERYTHING](#SITE-EVERYTHING) extension.
 [ETP link types](#ETP-link-types)<br/>
 [Username and password](#Username-and-password)<br/>
 [Disable file downloading](#Disable-file-downloading)<br/>
-[Different indexes](#Different-indexes)<br/>
+[Multiple instances](#Multiple-instances)<br/>
 [Create a Windows share](#Create-a-Windows-share)<br/>
 [SITE EVERYTHING](#SITE-EVERYTHING)</br>
 [Security](#Security)<br/>
@@ -98,7 +98,7 @@ Please make sure you share each drive on your server as its drive letter.
 
 For example, share C: drive as: **C**
 
-To use custom shares, please see [ETP path rewriting](/support/everything/etp/#etp_client_path_rewriting).
+To use custom shares, please see [ETP Client path rewriting](#ETP-Client-path-rewriting).
 <br/><br/><br/>
 
   
@@ -163,10 +163,10 @@ To disable ETP/FTP file downloading:
     
   
 
-Different indexes
------------------
+Multiple instances
+------------------
 
-To index different NTFS volumes for the ETP server, see [Multiple Instances](/support/everything/multiple_instances).
+To index different NTFS volumes for the ETP server, see [Multiple Instances](https://www.voidtools.com/support/everything/multiple_instances).
 <br/><br/><br/>
 
   
@@ -310,7 +310,7 @@ To disable file downloading:
 *   Click the **ETP Server** tab.
 *   Uncheck **allow file download**.
 
-See [Disable ETP/FTP Server](/support/everything/etp#disable_etp_ftp_server) to remove the ETP server options and prevent the ETP server from starting.
+See [Disable ETP/FTP Server](#Disable-ETP/FTP-Server) to remove the ETP server options and prevent the ETP server from starting.
 <br/><br/><br/>
 
   
@@ -362,10 +362,10 @@ To run an Everything ETP server as a client service (not to be confused with the
 
 *   Copy your Everything.exe to an empty folder.
 *   Run Everything.exe as administrator
-*   Please make sure [Store settings and data in %APPDATA%\\Everything](/support/everything/options/#store_settings_and_data_in_appdata_everything) is disabled.
-*   Please make sure the [Everything service](/support/everything/options/#everything_service) is not installed.
-*   Setup your [indexes](/support/everything/options#indexes).
-*   Setup the [ETP server settings](/support/everything/options/#etp_ftp_server).
+*   Please make sure [Store settings and data in %APPDATA%\\Everything](https://www.voidtools.com/support/everything/options/#store_settings_and_data_in_appdata_everything) is disabled.
+*   Please make sure the [Everything service](https://www.voidtools.com/support/everything/options/#everything_service) is not installed.
+*   Setup your [indexes](https://www.voidtools.com/support/everything/options#indexes).
+*   Setup the [ETP server settings](https://www.voidtools.com/support/everything/options/#etp_ftp_server).
 *   Completely exit Everything (right click the Everything tray icon and click Exit).
 *   From a command prompt, navigate to your Everything.exe
 *   Run the following command to install the client service:<br/>
@@ -425,5 +425,6 @@ See also
 
 *   [Multiple Instances](https://www.voidtools.com/support/everything/multiple_instances)
 *   https://www.voidtools.com/support/everything/etp/
+*   [ETP/FTP Server Help](https://www.voidtools.com/forum/viewtopic.php?p=5731)
 *   [Everything 1.5 Plugins - ETP/FTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
 *   [Everything 1.5 Plugin SDK](https://www.voidtools.com/forum/viewtopic.php?t=16535)
