@@ -415,10 +415,10 @@ Default state:
 
 For example, to find the first 100 items that contain abc:
 
-<pre>EVERYTHING SEARCH abc
-EVERYTHING COUNT 100
-EVERYTHING PATH_COLUMN 1
-EVERYTHING QUERY</pre>
+<pre>SITE EVERYTHING SEARCH abc
+SITE EVERYTHING COUNT 100
+SITE EVERYTHING PATH_COLUMN 1
+SITE EVERYTHING QUERY</pre>
 <br/><br/><br/>
 
 
