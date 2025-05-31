@@ -345,11 +345,11 @@ To automatically connect to an ETP server when starting Everything:
 SITE EVERYTHING
 ---------------
 
-The Everything ETP/FTP server extends FTP with the command SITE EVERYTHING.
+The Everything ETP/FTP server extends FTP with the command <code>SITE EVERYTHING</code>.
 
 The Everything client uses this extension to request search results.
 
-You can use the SITE command to check if the ETP/FTP server supports the EVERYTHING extension.
+You can use the <code>SITE</code> command to check if the ETP/FTP server supports the <code>SITE EVERYTHING</code> extension.
 
 <dl>
 <dt>SITE EVERYTHING CASE &lt;x&gt;</dt><dd>(Match case if x is nonzero)</dd>
