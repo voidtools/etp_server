@@ -41,6 +41,13 @@ ETP/FTP Server Options:
 
 
 
+Filezilla connected to an ETP/FTP Server:
+
+![image](https://github.com/user-attachments/assets/a2555b5b-838f-4598-8ab1-c961aba3c522)
+<br/><br/><br/> 
+  
+
+
 SITE EVERYTHING
 ---------------
 
@@ -120,13 +127,6 @@ ATTRIBUTES_DESCENDING
 FILE_LIST_FILENAME_ASCENDING
 FILE_LIST_FILENAME_DESCENDING
 
-
-
-Filezilla connected to an ETP/FTP Server:
-
-![image](https://github.com/user-attachments/assets/a2555b5b-838f-4598-8ab1-c961aba3c522)
-<br/><br/><br/> 
-  
 
 
 Plug-in Installation
