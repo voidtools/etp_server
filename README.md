@@ -124,7 +124,9 @@ ETP link types
 
 There are four link types that change the way the Everything client accesses files on the ETP server.
 
-When connecting to an ETP server you can specify the link type.
+Specify the link type when connecting to an ETP server.
+
+Link types:
 
 <table>
 <tr><th>Link type</th><th>Description</th></tr>
@@ -354,7 +356,7 @@ The Everything ETP/FTP server extends FTP with the <code>SITE EVERYTHING</code> 
 
 The Everything client uses this extension to request search results.
 
-You can use the <code>SITE</code> command to check if the ETP/FTP server supports the <code>SITE EVERYTHING</code> extension.
+Use the <code>SITE</code> command to check if the ETP/FTP server supports the <code>SITE EVERYTHING</code> extension.
 <br/><br/><br/>
 
 
