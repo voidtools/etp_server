@@ -35,7 +35,7 @@ Download
 
 https://github.com/voidtools/etp_server/releases
 
-https://www.voidtools.com/forum/viewtopic.php?p=35401#etp
+[Everything 1.5 Plugins - ETP/FTP Server](https://www.voidtools.com/forum/viewtopic.php?p=35401#etp)
 <br/><br/><br/>
 
 ETP/FTP Server Options:
