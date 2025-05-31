@@ -9,7 +9,7 @@ The [Everything Server](https://github.com/voidtools/everything_server) replaces
 [Download](#download)<br/>
 [Install Guide](#Plug-in-Installation)<br/>
 [Setup Guide](#Plug-in-Setup)<br/>
-[Start an ETP/FTP server](#Start-an-ETP/FTP-server)<br/>
+[Start an ETP/FTP server](#Start-an-ETP-FTP-server)<br/>
 [Connect to an ETP server](#Connect-to-an-ETP-server)<br/>
 [ETP link types](#ETP-link-types)<br/>
 [Username and password](#Username-and-password)<br/>
