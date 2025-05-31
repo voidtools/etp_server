@@ -386,27 +386,28 @@ You can use the <code>SITE</code> command to check if the ETP/FTP server support
 
 Default state:
 <table>
-<tr><td>EVERYTHING CASE</td><td>0</td></tr>
-<tr><td>EVERYTHING WHOLE_WORD</td><td>0</td></tr>
-<tr><td>EVERYTHING PATH</td><td>0</td></tr>
-<tr><td>EVERYTHING DIACRITICS</td><td>0</td></tr>
-<tr><td>EVERYTHING REGEX</td><td>0</td></tr>
-<tr><td>EVERYTHING SEARCH</td><td></td></tr>
-<tr><td>EVERYTHING FILTER_SEARCH</td><td></td></tr>
-<tr><td>EVERYTHING FILTER_CASE</td><td>0</td></tr>
-<tr><td>EVERYTHING FILTER_WHOLE_WORD</td><td>0</td></tr>
-<tr><td>EVERYTHING FILTER_PATH</td><td>0</td></tr>
-<tr><td>EVERYTHING FILTER_DIACRITICS</td><td>0</td></tr>
-<tr><td>EVERYTHING FILTER_REGEX</td><td>0</td></tr>
-<tr><td>EVERYTHING SORT</td><td>0</td></tr>
-<tr><td>EVERYTHING OFFSET</td><td>0</td></tr>
-<tr><td>EVERYTHING COUNT</td><td>0</td></tr>
-<tr><td>EVERYTHING SIZE_COLUMN</td><td>0</td></tr>
-<tr><td>EVERYTHING DATE_CREATED_COLUMN</td><td>0</td></tr>
-<tr><td>EVERYTHING DATE_MODIFIED_COLUMN</td><td>0</td></tr>
-<tr><td>EVERYTHING ATTRIBUTES_COLUMN</td><td>0</td></tr>
-<tr><td>EVERYTHING PATH_COLUMN</td><td>0</td></tr>
-<tr><td>EVERYTHING FILE_LIST_FILENAME_COLUMN</td><td>0</td></tr>
+<tr><th>Command</th><th>Default Value</th></tr>
+<tr><td>SITE EVERYTHING CASE</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING WHOLE_WORD</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING PATH</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING DIACRITICS</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING REGEX</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING SEARCH</td><td></td></tr>
+<tr><td>SITE EVERYTHING FILTER_SEARCH</td><td></td></tr>
+<tr><td>SITE EVERYTHING FILTER_CASE</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING FILTER_WHOLE_WORD</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING FILTER_PATH</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING FILTER_DIACRITICS</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING FILTER_REGEX</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING SORT</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING OFFSET</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING COUNT</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING SIZE_COLUMN</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING DATE_CREATED_COLUMN</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING DATE_MODIFIED_COLUMN</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING ATTRIBUTES_COLUMN</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING PATH_COLUMN</td><td>0</td></tr>
+<tr><td>SITE EVERYTHING FILE_LIST_FILENAME_COLUMN</td><td>0</td></tr>
 </table>
 <br/><br/><br/>
 
