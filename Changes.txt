@@ -1,3 +1,6 @@
+Monday, 9 June 2025: Version 1.0.1.4
+	fixed an issue with using the wrong timezone in MDTM, MLSD and MLST
+	
 Monday, 26 May 2025: Version 1.0.1.3
 	added new code signing certificate: voidtools PTY LTD
 	
