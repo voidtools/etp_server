@@ -3652,7 +3652,9 @@ static void etp_server_client_print_MLST(etp_server_client_t *c,int is_folder,EV
 	{
 		SYSTEMTIME st;
 		
-		everything_plugin_os_filetime_to_localtime(&st,modify);
+		// FTP uses UTC.
+		// filetimes are already in UTC.
+		FileTimeToSystemTime((FILETIME *)&modify,&st);
 		
 		etp_server_client_printf(c,(const everything_plugin_utf8_t *)"modify=%04d%02d%02d%02d%02d%02d;",st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute,st.wSecond);
 	}
@@ -4583,7 +4585,9 @@ static void etp_server_client_MDTM(etp_server_client_t *c,const everything_plugi
 		{
 			SYSTEMTIME st;
 
-			everything_plugin_os_filetime_to_localtime(&st,fd.date_modified);
+			// FTP uses UTC.
+			// filetimes are already in UTC.
+			FileTimeToSystemTime((FILETIME *)&fd.date_modified,&st);
 
 			etp_server_client_printf(c,
 				(const everything_plugin_utf8_t *)"213 %04d%02d%02d"
@@ -5122,7 +5126,9 @@ static void etp_server_run_data_command(etp_server_client_t *c)
 					{
 						SYSTEMTIME st;
 						
-						everything_plugin_os_filetime_to_localtime(&st,fd.date_modified);
+						// FTP uses UTC.
+						// filetimes are already in UTC.
+						FileTimeToSystemTime((FILETIME *)&fd.date_modified,&st);
 						
 						etp_server_client_UTF8(c,(const everything_plugin_utf8_t *)"modify=%04d%02d%02d%02d%02d%02d;",st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute,st.wSecond);
 					}
