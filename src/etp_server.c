@@ -83,7 +83,7 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include <windows.h>
-#include "..\..\include\everything_plugin.h"
+#include "everything_plugin.h"
 #include "version.h"
 
 unsigned short __cdecl _byteswap_ushort(unsigned short _Short);
