@@ -1,3 +1,6 @@
+Thursday, 14 May 2026: Version 1.0.2.5
+	added Everything 1.5b support.
+
 Monday, 9 June 2025: Version 1.0.1.4
 	fixed an issue with using the wrong timezone in MDTM, MLSD and MLST
 	
@@ -9,5 +12,5 @@ Monday 18 March 2024: Version 1.0.1.2
     added XPWD alias for PWD.
 
 Thusday 22 June 2023: Version 1.0.0.1
-    Added installer.
+    added installer.
     fixed an issue with x86 plugins not working.
