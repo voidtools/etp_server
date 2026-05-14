@@ -35,9 +35,9 @@
 #define SETUP_DLL_NAME							"etp_server32.dll"
 #endif
 
-//TODO: remove 1.5a when in beta.
-#define SETUP_EVERYTHING_PROGRAM_NAME			"Everything 1.5a"
-#define SETUP_EVERYTHING_TASKBAR_NOTIFICATION	"EVERYTHING_TASKBAR_NOTIFICATION_(1.5a)"
+#define SETUP_EVERYTHING_PROGRAM_NAME			"Everything"
+#define SETUP_EVERYTHING_TASKBAR_NOTIFICATION	"EVERYTHING_TASKBAR_NOTIFICATION"
+#define SETUP_EVERYTHING_TASKBAR_NOTIFICATION_1_5_ALPHA	"EVERYTHING_TASKBAR_NOTIFICATION_(1.5a)"
 
 #define SETUP_MAX_STRING		MAX_PATH
 #define SETUP_MAX_COMMAND_LINE	32768
@@ -65,31 +65,79 @@
 #include <windows.h>
 #include <shellapi.h>
 #include <Psapi.h>
+#include <shlobj.h> // SHBrowseForFolderW
+#include <shobjidl.h> // IShellItem
 #include "../res/resource.h"
 #include "../../src/version.h"
 
-// load unicode for windows 95/98
-HMODULE LoadUnicowsProc(void);
-
-extern FARPROC _PfnLoadUnicows = (FARPROC) &LoadUnicowsProc;
-
-HMODULE LoadUnicowsProc(void)
+typedef struct setup_IFileOpenDialogVtbl_s
 {
-	OSVERSIONINFOA osvi;
-	
-	// make sure we are win9x.
-	// to prevent loading unicows.dll on NT as a securiry precausion.
-	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOA);
-	if (GetVersionExA(&osvi))
+    HRESULT (STDMETHODCALLTYPE *QueryInterface)(struct setup_IFileOpenDialog_s *This,REFIID riid,void **ppvObject);
+    ULONG (STDMETHODCALLTYPE *AddRef)(struct setup_IFileOpenDialog_s *This);
+    ULONG (STDMETHODCALLTYPE *Release)(struct setup_IFileOpenDialog_s *This);
+    HRESULT (STDMETHODCALLTYPE *Show)(struct setup_IFileOpenDialog_s *This,HWND hwndOwner);
+    HRESULT (STDMETHODCALLTYPE *SetFileTypes)(struct setup_IFileOpenDialog_s *This,UINT cFileTypes,const struct setup_COMDLG_FILTERSPEC_s *rgFilterSpec);
+    HRESULT (STDMETHODCALLTYPE *SetFileTypeIndex)(struct setup_IFileOpenDialog_s *This,UINT iFileType);
+    HRESULT (STDMETHODCALLTYPE *GetFileTypeIndex)(struct setup_IFileOpenDialog_s *This,UINT *piFileType);
+    HRESULT (STDMETHODCALLTYPE *Advise)(struct setup_IFileOpenDialog_s *This,struct _os_IFileDialogEvents_s *pfde,DWORD *pdwCookie);
+    HRESULT (STDMETHODCALLTYPE *Unadvise)(struct setup_IFileOpenDialog_s *This,DWORD dwCookie);
+    HRESULT (STDMETHODCALLTYPE *SetOptions)(struct setup_IFileOpenDialog_s *This,int fos);
+    HRESULT (STDMETHODCALLTYPE *GetOptions)(struct setup_IFileOpenDialog_s *This,int *pfos);
+    HRESULT (STDMETHODCALLTYPE *SetDefaultFolder)(struct setup_IFileOpenDialog_s *This,IShellItem *psi);
+    HRESULT (STDMETHODCALLTYPE *SetFolder)(struct setup_IFileOpenDialog_s *This,IShellItem *psi);
+    HRESULT (STDMETHODCALLTYPE *GetFolder)(struct setup_IFileOpenDialog_s *This,IShellItem **ppsi);
+    HRESULT (STDMETHODCALLTYPE *GetCurrentSelection)(struct setup_IFileOpenDialog_s *This,IShellItem **ppsi);
+    HRESULT (STDMETHODCALLTYPE *SetFileName)(struct setup_IFileOpenDialog_s *This,LPCWSTR pszName);
+    HRESULT (STDMETHODCALLTYPE *GetFileName)(struct setup_IFileOpenDialog_s *This,LPWSTR *pszName);
+    HRESULT (STDMETHODCALLTYPE *SetTitle)(struct setup_IFileOpenDialog_s *This,LPCWSTR pszTitle);
+    HRESULT (STDMETHODCALLTYPE *SetOkButtonLabel)(struct setup_IFileOpenDialog_s *This,LPCWSTR pszText);
+    HRESULT (STDMETHODCALLTYPE *SetFileNameLabel)(struct setup_IFileOpenDialog_s *This,LPCWSTR pszLabel);
+    HRESULT (STDMETHODCALLTYPE *GetResult)(struct setup_IFileOpenDialog_s *This,IShellItem **ppsi);
+    HRESULT (STDMETHODCALLTYPE *AddPlace)(struct setup_IFileOpenDialog_s *This,IShellItem *psi,int fdap);
+    HRESULT (STDMETHODCALLTYPE *SetDefaultExtension)(struct setup_IFileOpenDialog_s *This,LPCWSTR pszDefaultExtension);
+    HRESULT (STDMETHODCALLTYPE *Close)(struct setup_IFileOpenDialog_s *This,HRESULT hr);
+    HRESULT (STDMETHODCALLTYPE *SetClientGuid)(struct setup_IFileOpenDialog_s *This,REFGUID guid);
+    HRESULT (STDMETHODCALLTYPE *ClearClientData)(struct setup_IFileOpenDialog_s *This);
+    HRESULT (STDMETHODCALLTYPE *SetFilter)(struct setup_IFileOpenDialog_s *This,void *pFilter);
+    HRESULT (STDMETHODCALLTYPE *GetResults)(struct setup_IFileOpenDialog_s *This,void **ppenum);
+    HRESULT (STDMETHODCALLTYPE *GetSelectedItems)(struct setup_IFileOpenDialog_s *This,void **ppsai);
+
+}setup_IFileOpenDialogVtbl_t;
+
+typedef struct setup_IFileOpenDialog_s 
+{ 
+	struct setup_IFileOpenDialogVtbl_s *lpVtbl; 
+
+}setup_IFileOpenDialog_t;
+
+static const IID setup_CLSID_FileOpenDialog = {0xdc1c5a9c,0xe88a,0x4dde,{0xa5,0xa1,0x60,0xf8,0x2a,0x20,0xae,0xf7}};
+static const IID setup_IID_IFileOpenDialog = {0xd57c7288,0xd4ad,0x4768,{0xbe,0x02,0x9d,0x96,0x95,0x32,0xd9,0x60}};
+
+#if defined(_WIN64)
+#else
+	// load unicode for windows 95/98
+	HMODULE LoadUnicowsProc(void);
+
+	extern FARPROC _PfnLoadUnicows = (FARPROC) &LoadUnicowsProc;
+
+	HMODULE LoadUnicowsProc(void)
 	{
-		if (osvi.dwPlatformId == VER_PLATFORM_WIN32_WINDOWS)
+		OSVERSIONINFOA osvi;
+		
+		// make sure we are win9x.
+		// to prevent loading unicows.dll on NT as a securiry precausion.
+		osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOA);
+		if (GetVersionExA(&osvi))
 		{
-			return LoadLibraryA("unicows.dll");
+			if (osvi.dwPlatformId == VER_PLATFORM_WIN32_WINDOWS)
+			{
+				return LoadLibraryA("unicows.dll");
+			}
 		}
+		
+		return NULL;
 	}
-	
-	return NULL;
-}
+#endif
 
 void setup_main(void);
 int setup_get_reg_string(HKEY root_hkey,const char *key,const char *value,wchar_t *buf);
@@ -99,6 +147,9 @@ void setup_fatal(DWORD error_code,const char *msg);
 void setup_cat_astring(wchar_t *wbuf,DWORD size_in_wchars,const char *as);
 void setup_cat_wstring(wchar_t *wbuf,DWORD size_in_wchars,const wchar_t *ws);
 void setup_cat_number(wchar_t *wbuf,DWORD size_in_wchars,DWORD number);
+static int setup_browse_for_folder(wchar_t *everything_exe_filename_wbuf);
+static void setup_copy_string(wchar_t *dst,const wchar_t *src);
+static int setup_get_running_exe_filename(const char *window_class,wchar_t *everything_exe_filename_wbuf);
 
 void setup_atow(const char *as,wchar_t *ws)
 {
@@ -167,6 +218,166 @@ int setup_get_reg_string(HKEY root_hkey,const char *key,const char *value,wchar_
 	return ret;
 }
 
+static void setup_copy_string(wchar_t *dst,const wchar_t *src)
+{
+	wchar_t *d;
+	const wchar_t *p;
+	SIZE_T run;
+	
+	d = dst;
+	p = src;
+	run = SETUP_MAX_STRING - 1;
+	
+	while(*p)
+	{
+		if (!run)
+		{
+			break;
+		}
+	
+		*d++ = *p;
+		run--;
+		
+		p++;
+	}
+	
+	*d = 0;
+}
+
+static int setup_browse_for_folder(wchar_t *everything_exe_filename_wbuf)
+{
+	setup_IFileOpenDialog_t *file_open_dialog;
+	
+	// IFileOpenDialog, when closed, will focus the first dlg item on the previously active window.
+	// it will then focus the correct, last focused item.
+	// this breaks the previous edit selection
+	
+	if (SUCCEEDED(CoCreateInstance(&setup_CLSID_FileOpenDialog,NULL,CLSCTX_INPROC_SERVER,&setup_IID_IFileOpenDialog,&file_open_dialog)))
+	{
+		int ret;
+		IShellItem *shell_item;
+		HRESULT hres;
+
+		ret = 0;
+		
+		// setting advise for events does not allow us to select the control panel. 
+		// we only get FolderChanging events with no SetFolderSelection event
+		
+		// FOS_NOCHANGEDIR             = 0x00000008,
+		// FOS_PICKFOLDERS             = 0x00000020,
+		// FOS_ALLNONSTORAGEITEMS	= 0x80
+		// FOS_FORCESHOWHIDDEN	= 0x10000000,
+		
+		file_open_dialog->lpVtbl->SetOptions(file_open_dialog,0x20 | 0x08 | 0x80 | 0x10000000);
+		
+		file_open_dialog->lpVtbl->SetTitle(file_open_dialog,L"Select Everything.exe Location");
+
+		hres = file_open_dialog->lpVtbl->Show(file_open_dialog,NULL);
+		if (SUCCEEDED(hres))
+		{
+			if (SUCCEEDED(file_open_dialog->lpVtbl->GetResult(file_open_dialog,&shell_item)))
+			{
+				LPOLESTR filename;
+
+				if (SUCCEEDED(shell_item->lpVtbl->GetDisplayName(shell_item,SIGDN_DESKTOPABSOLUTEPARSING,&filename)))
+				{
+					setup_copy_string(everything_exe_filename_wbuf,filename);
+					
+					ret = 1;
+				
+					CoTaskMemFree(filename);
+				}
+				
+				shell_item->lpVtbl->Release(shell_item);
+			}
+		}
+		else
+		{
+			if (hres == 0x800704c7)
+			{
+				//  The operation was canceled by the user. 
+				ExitProcess(1);
+			}
+		}
+		
+		file_open_dialog->lpVtbl->Release(file_open_dialog);
+		
+		return ret;
+	}
+	
+	{
+		BROWSEINFOW bi;
+		ITEMIDLIST *iil;
+		int ret;
+
+		ret = 0;
+		
+
+		// BIF_USENEWUI wont bring the initial selection into view.
+		// BIF_NOTRANSLATETARGETS we dont want symbolic links targets, we want the actual path.
+		// BIF_NEWDIALOGSTYLE allows computer to be selected, and keeps the OK button focused, which keeps the dialog focused. Otherwise keyboard focus is lost
+		ZeroMemory(&bi,sizeof(BROWSEINFOW));
+		bi.lpszTitle = L"Select Everything.exe Location";
+		bi.pszDisplayName = L"";
+		bi.ulFlags = BIF_USENEWUI | BIF_NOTRANSLATETARGETS | BIF_NEWDIALOGSTYLE;
+		bi.hwndOwner = NULL;
+
+		iil = (ITEMIDLIST *)SHBrowseForFolderW(&bi);
+
+		if (iil)
+		{
+			if (SHGetPathFromIDListW(iil,everything_exe_filename_wbuf))
+			{
+				ret = 1;
+			}
+
+			ILFree(iil);
+		}
+		else
+		{
+			// cancelled.
+			ExitProcess(1);
+		}
+		
+		return ret;
+	}
+}
+
+static int setup_get_running_exe_filename(const char *window_class,wchar_t *everything_exe_filename_wbuf)
+{
+	int ret;
+	HWND everything_hwnd;
+	wchar_t class_name_wbuf[SETUP_MAX_STRING];
+	
+	ret = 0;
+	
+	setup_atow(window_class,class_name_wbuf);
+	
+	everything_hwnd = FindWindowW(class_name_wbuf,NULL);
+	if (everything_hwnd)
+	{
+		DWORD process_id;
+		
+		if (GetWindowThreadProcessId(everything_hwnd,&process_id))
+		{
+			HANDLE process_handle;
+
+			process_handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ,FALSE,process_id);
+			if (process_handle)
+			{
+				if (GetModuleFileNameExW(process_handle,NULL,everything_exe_filename_wbuf,SETUP_MAX_STRING))
+				{
+					ret = 1;
+				}
+				
+				CloseHandle(process_handle);
+			}
+		}
+	}
+	
+	return ret;
+}
+
 int setup_get_everything_exe_filename(wchar_t *everything_exe_filename_wbuf)
 {
 	int ret;
@@ -185,34 +396,29 @@ int setup_get_everything_exe_filename(wchar_t *everything_exe_filename_wbuf)
 	// portable version running?
 	if (!ret)
 	{
-		HWND everything_hwnd;
-		wchar_t class_name_wbuf[SETUP_MAX_STRING];
-		
-		setup_atow(SETUP_EVERYTHING_TASKBAR_NOTIFICATION,class_name_wbuf);
-		
-		everything_hwnd = FindWindowW(class_name_wbuf,NULL);
-		if (everything_hwnd)
+		if (setup_get_running_exe_filename(SETUP_EVERYTHING_TASKBAR_NOTIFICATION,everything_exe_filename_wbuf))
 		{
-			DWORD process_id;
-			
-			if (GetWindowThreadProcessId(everything_hwnd,&process_id))
-			{
-				HANDLE process_handle;
-
-				process_handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ,FALSE,process_id);
-				if (process_handle)
-				{
-					if (GetModuleFileNameExW(process_handle,NULL,everything_exe_filename_wbuf,SETUP_MAX_STRING))
-					{
-						ret = 1;
-					}
-					
-					CloseHandle(process_handle);
-				}
-			}
+			ret = 1;
 		}
 	}
 
+	// 1.5a version running?
+	if (!ret)
+	{
+		if (setup_get_running_exe_filename(SETUP_EVERYTHING_TASKBAR_NOTIFICATION_1_5_ALPHA,everything_exe_filename_wbuf))
+		{
+			ret = 1;
+		}
+	}
+
+	if (!ret)
+	{
+		if (setup_browse_for_folder(everything_exe_filename_wbuf))
+		{
+			ret = 1;
+		}
+	}
+	
 	return ret;	
 }
 
@@ -377,6 +583,9 @@ void * __cdecl memset(void *p, int v, size_t s) {
 void setup_main(void)
 {
 	wchar_t everything_exe_filename_wbuf[SETUP_MAX_STRING];
+
+	// required for SHBrowseForFolder
+	OleInitialize(0);
 	
 	// get everything install folder
 	if (setup_get_everything_exe_filename(everything_exe_filename_wbuf))
