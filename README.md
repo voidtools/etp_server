@@ -66,8 +66,8 @@ To install a plug-in:
 To manually install a plug-in:
 
 *   [Download a plug-in zip](#Download) and extract the plug-in dll to your Desktop.
-*   Move the extracted plug-in dll to C:\\Program Files\\Everything\\plugins  
-    where C:\\Program Files\\Everything is your Everything installation folder.
+*   Move the extracted plug-in dll to C:\Program Files\Everything\plugins  
+    where C:\Program Files\Everything is your Everything installation folder.
 *   In **Everything**, from the **File** menu, click **Exit**.
 *   **Restart Everything**.
 <br/><br/><br/>
@@ -133,10 +133,10 @@ Link types:
 <tr><td>C:</td><td>No change, the paths are the same as they are on the server. 
   
 This is useful if you index a subst'ed drive on the server and are using mapped network drives on the client.</td></tr>
-<tr><td>\\\\Server\\C</td><td>Use Windows shares (this is the default link type). 
+<tr><td>\\Server\C</td><td>Use Windows shares (this is the default link type). 
   
 By default these shares do not exist, you will need to create them on the server if you wish to use this method.</td></tr>
-<tr><td>\\\\Server\\C$</td><td>Use the default admin drive shares.</td></tr>
+<tr><td>\\Server\C$</td><td>Use the default admin drive shares.</td></tr>
 <tr><td>ftp://host/C:</td><td>Use ftp links.</td></tr>
 </table>
 <br/><br/><br/>
@@ -206,14 +206,14 @@ To create a windows share for a single folder, please follow the guide below:
 
 For example, we want to host an ETP/FTP server for one folder:
 
-<code>C:\\share</code>
+<code>C:\share</code>
 
   
 
-Substitute a drive letter for the local folder c:\\share:
+Substitute a drive letter for the local folder c:\share:
 
 *   From a command prompt, run:<br/>
-    <code>subst H: c:\\share</code>
+    <code>subst H: c:\share</code>
 <br/><br/><br/>
 
   
@@ -228,9 +228,9 @@ Setup an index to include only the H: drive.
     
   
 
-Add a share name to c:\\share
+Add a share name to c:\share
 
-*   In **Explorer**, **right click** the **c:\\share** and click **properties**.
+*   In **Explorer**, **right click** the **c:\share** and click **properties**.
 *   Click the **Sharing** tab.
 *   Click **Advanced Sharing...**.
 *   Click **Add**.
@@ -239,7 +239,7 @@ Add a share name to c:\\share
 *   Click **OK**.
 *   Click **Close**.
 
-Connect to the ETP/FTP server with \\\\Server\\C links.
+Connect to the ETP/FTP server with \\Server\C links.
 <br/><br/><br/>
 
   
@@ -281,18 +281,18 @@ ETP Client path rewriting
 
 ETP clients can rewrite the ETP server paths so they can be accessed from different shares.
 
-For example, rewrite the path D:\\music to \\\\server\\music and "D:\\Install Files" to "\\\\server\\Install Files"
+For example, rewrite the path D:\music to \\server\music and "D:\Install Files" to "\\server\Install Files"
 
 To rewrite the paths on the ETP client.
 *   On the **_Everything_** ETP client PC:
 *   Completely exit **_Everything_** (Right click the **_Everything_** system tray icon and click Exit)
-*   Open your %APPDATA%\\Everything\\Everything.ini
+*   Open your %APPDATA%\Everything\Everything.ini
 *   Change the following lines:<br/>
     <code>etp\_client\_rewrite\_patterns=</code><br/>
     <code>etp\_client\_rewrite\_substitutions=</code><br/>
     to:<br/>
-    <code>etp\_client\_rewrite\_patterns=D:\\music;"D:\\\\Install Files"</code><br/>
-    <code>etp\_client\_rewrite\_substitutions=\\\\server\\music;"\\\\\\\\server\\\\Install Files"</code>
+    <code>etp\_client\_rewrite\_patterns=D:\music;"D:\\Install Files"</code><br/>
+    <code>etp\_client\_rewrite\_substitutions=\\server\music;"\\\\server\\Install Files"</code>
 *   Save changes and restart Everything.
 
 The pattern must match the path on the server. It is not effected by the link type.
@@ -307,7 +307,7 @@ To run an Everything ETP server as a client service (not to be confused with the
 
 *   Copy your Everything.exe to an empty folder.
 *   Run Everything.exe as administrator
-*   Please make sure [Store settings and data in %APPDATA%\\Everything](https://www.voidtools.com/support/everything/options/#store_settings_and_data_in_appdata_everything) is disabled.
+*   Please make sure [Store settings and data in %APPDATA%\Everything](https://www.voidtools.com/support/everything/options/#store_settings_and_data_in_appdata_everything) is disabled.
 *   Please make sure the [Everything service](https://www.voidtools.com/support/everything/options/#everything_service) is not installed.
 *   Setup your [indexes](https://www.voidtools.com/support/everything/options#indexes).
 *   Setup the [ETP server settings](https://www.voidtools.com/support/everything/options/#etp_ftp_server).
